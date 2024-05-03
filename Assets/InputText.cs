@@ -14,6 +14,14 @@ public class InputText : MonoBehaviour
     public TMP_Text Carrot;
     public TMP_Text Tomato;
     public TMP_Text Onion;
+    public TMP_Text Apple;
+    public TMP_Text Chicken;
+    public TMP_Text Corn;
+    public TMP_Text Egg;
+    public TMP_Text Lemon;
+    public TMP_Text Milk;
+    public TMP_Text StrawBerry;
+    public TMP_Text Watermelon;
 
     public TMP_InputField InputFieldCow;
     public TMP_InputField InputFieldPig;
@@ -24,6 +32,14 @@ public class InputText : MonoBehaviour
     public TMP_InputField InputFieldCarrot;
     public TMP_InputField InputFieldTomato;
     public TMP_InputField InputFieldOnion;
+    public TMP_InputField InputFieldApple;
+    public TMP_InputField InputFieldChicken;
+    public TMP_InputField InputFieldCorn;
+    public TMP_InputField InputFieldEgg;
+    public TMP_InputField InputFieldLemon;
+    public TMP_InputField InputFieldMilk;
+    public TMP_InputField InputFieldStrawBerry;
+    public TMP_InputField InputFieldWatermelon;
 
     // Start is called before the first frame update
     void Start()
@@ -110,6 +126,70 @@ public class InputText : MonoBehaviour
         else
         {
             Onion.text = "Incorrect!";
+        }
+        if (InputFieldApple.text == "Apple" || InputFieldApple.text == "apple")
+        {
+            Apple.text = "Correct!";
+        }
+        else
+        {
+            Apple.text = "Incorrect!";
+        }
+        if (InputFieldChicken.text == "Chicken" || InputFieldChicken.text == "chicken")
+        {
+            Chicken.text = "Correct!";
+        }
+        else
+        {
+            Chicken.text = "Incorrect!";
+        }
+        if (InputFieldCorn.text == "Corn" || InputFieldCorn.text == "corn")
+        {
+            Corn.text = "Correct!";
+        }
+        else
+        {
+            Corn.text = "Incorrect!";
+        }
+        if (InputFieldEgg.text == "Egg" || InputFieldEgg.text == "egg")
+        {
+            Egg.text = "Correct!";
+        }
+        else
+        {
+            Egg.text = "Incorrect!";
+        }
+        if (InputFieldLemon.text == "Lemon" || InputFieldLemon.text == "lemon")
+        {
+            Lemon.text = "Correct!";
+        }
+        else
+        {
+            Lemon.text = "Incorrect!";
+        }
+        if (InputFieldMilk.text == "Milk" || InputFieldMilk.text == "milk")
+        {
+            Milk.text = "Correct!";
+        }
+        else
+        {
+            Milk.text = "Incorrect!";
+        }
+        if (InputFieldStrawBerry.text == "StrawBerry" || InputFieldStrawBerry.text == "strawberry")
+        {
+            StrawBerry.text = "Correct!";
+        }
+        else
+        {
+            StrawBerry.text = "Incorrect!";
+        }
+        if (InputFieldWatermelon.text == "Watermelon" || InputFieldWatermelon.text == "watermelon")
+        {
+            Watermelon.text = "Correct!";
+        }
+        else
+        {
+            Watermelon.text = "Incorrect!";
         }
     }
 }
