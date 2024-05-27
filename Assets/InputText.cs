@@ -45,6 +45,7 @@ public class InputText : MonoBehaviour
     public GameObject textToActivate;
     public GameObject buttonToActivate;
     public GameObject buttonCheck;
+    public List<GameObject> panelsToActivate; // Lista de paneles que se activarán
 
     private bool cow;
     private bool pig;
@@ -88,186 +89,38 @@ public class InputText : MonoBehaviour
         textToActivate.SetActive(false);
         buttonToActivate.SetActive(false);
         buttonCheck.SetActive(true);
+
+        foreach (var panel in panelsToActivate)
+        {
+            panel.SetActive(false); // Asegúrate de que los paneles estén desactivados al inicio
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ButtonPressed()
     {
-        if (InputFieldCow.text == "Cow" || InputFieldCow.text == "cow")
-        {
-            Cow.text = "Correct!";
-            cow = true;
-        }
-        else
-        {
-            Cow.text = "Incorrect!";
-            cow = false;
-        }
-        if (InputFieldPig.text == "Pig" || InputFieldPig.text == "pig")
-        {
-            Pig.text = "Correct!";
-            pig = true;
-        }
-        else
-        {
-           Pig.text = "Incorrect!";
-           pig = false;
-        }
-        if (InputFieldHorse.text == "Horse" || InputFieldHorse.text == "horse")
-        {
-            Horse.text = "Correct!";
-            horse = true;
-        }
-        else
-        {
-            Horse.text = "Incorrect!";
-            horse = false;
-        }
-        if (InputFieldRabbit.text == "Rabbit" || InputFieldRabbit.text == "rabbit")
-        {
-            Rabbit.text = "Correct!";
-            rabbit = true;
-        }
-        else
-        {
-            Rabbit.text = "Incorrect!";
-            rabbit = false;
-        }
-        if (InputFieldSheep.text == "Sheep" || InputFieldSheep.text == "sheep")
-        {
-            Sheep.text = "Correct!";
-            sheep = true;
-        }
-        else
-        {
-            Sheep.text = "Incorrect!";
-            sheep = false;
-        }
-        if (InputFieldLettuce.text == "Lettuce" || InputFieldLettuce.text == "lettuce")
-        {
-            Lettuce.text = "Correct!";
-            lettuce = true;
-        }
-        else
-        {
-            Lettuce.text = "Incorrect!";
-            lettuce = false;
-        }
-        if (InputFieldCarrot.text == "Carrot" || InputFieldCarrot.text == "carrot")
-        {
-            Carrot.text = "Correct!";
-            carrot = true;
-        }
-        else
-        {
-            Carrot.text = "Incorrect!";
-            carrot = false;
-        }
-        if (InputFieldTomato.text == "Tomato" || InputFieldTomato.text == "tomato")
-        {
-            Tomato.text = "Correct!";
-            tomato = true;
-        }
-        else
-        {
-            Tomato.text = "Incorrect!";
-            tomato = false;
-        }
-        if (InputFieldOnion.text == "Onion" || InputFieldOnion.text == "onion")
-        {
-            Onion.text = "Correct!";
-            onion = true;
-        }
-        else
-        {
-            Onion.text = "Incorrect!";
-            onion = false;
-        }
-        if (InputFieldApple.text == "Apple" || InputFieldApple.text == "apple")
-        {
-            Apple.text = "Correct!";
-            apple = true;
-        }
-        else
-        {
-            Apple.text = "Incorrect!";
-            apple = false;
-        }
-        if (InputFieldChicken.text == "Chicken" || InputFieldChicken.text == "chicken")
-        {
-            Chicken.text = "Correct!";
-            chicken = true;
-        }
-        else
-        {
-            Chicken.text = "Incorrect!";
-            chicken = false;
-        }
-        if (InputFieldCorn.text == "Corn" || InputFieldCorn.text == "corn")
-        {
-            Corn.text = "Correct!";
-            corn = true;
-        }
-        else
-        {
-            Corn.text = "Incorrect!";
-            corn = false;
-        }
-        if (InputFieldEgg.text == "Egg" || InputFieldEgg.text == "egg")
-        {
-            Egg.text = "Correct!";
-            egg = true;
-        }
-        else
-        {
-            Egg.text = "Incorrect!";
-            egg = false;
-        }
-        if (InputFieldLemon.text == "Lemon" || InputFieldLemon.text == "lemon")
-        {
-            Lemon.text = "Correct!";
-            lemon = true;
-        }
-        else
-        {
-            Lemon.text = "Incorrect!";
-            lemon = false;
-        }
-        if (InputFieldMilk.text == "Milk" || InputFieldMilk.text == "milk")
-        {
-            Milk.text = "Correct!";
-            milk = true;
-        }
-        else
-        {
-            Milk.text = "Incorrect!";
-            milk = false;
-        }
-        if (InputFieldStrawBerry.text == "StrawBerry" || InputFieldStrawBerry.text == "strawberry")
-        {
-            StrawBerry.text = "Correct!";
-            strawberry = true;
-        }
-        else
-        {
-            StrawBerry.text = "Incorrect!";
-            strawberry = false;
-        }
-        if (InputFieldWatermelon.text == "Watermelon" || InputFieldWatermelon.text == "watermelon")
-        {
-            Watermelon.text = "Correct!";
-            watermelon = true;
-        }
-        else
-        {
-            Watermelon.text = "Incorrect!";
-            watermelon = false;
-        }
+        CheckInput(InputFieldCow, Cow, ref cow, "Cow");
+        CheckInput(InputFieldPig, Pig, ref pig, "Pig");
+        CheckInput(InputFieldHorse, Horse, ref horse, "Horse");
+        CheckInput(InputFieldRabbit, Rabbit, ref rabbit, "Rabbit");
+        CheckInput(InputFieldSheep, Sheep, ref sheep, "Sheep");
+        CheckInput(InputFieldLettuce, Lettuce, ref lettuce, "Lettuce");
+        CheckInput(InputFieldCarrot, Carrot, ref carrot, "Carrot");
+        CheckInput(InputFieldTomato, Tomato, ref tomato, "Tomato");
+        CheckInput(InputFieldOnion, Onion, ref onion, "Onion");
+        CheckInput(InputFieldApple, Apple, ref apple, "Apple");
+        CheckInput(InputFieldChicken, Chicken, ref chicken, "Chicken");
+        CheckInput(InputFieldCorn, Corn, ref corn, "Corn");
+        CheckInput(InputFieldEgg, Egg, ref egg, "Egg");
+        CheckInput(InputFieldLemon, Lemon, ref lemon, "Lemon");
+        CheckInput(InputFieldMilk, Milk, ref milk, "Milk");
+        CheckInput(InputFieldStrawBerry, StrawBerry, ref strawberry, "StrawBerry");
+        CheckInput(InputFieldWatermelon, Watermelon, ref watermelon, "Watermelon");
 
         if (cow && pig && horse && rabbit && sheep && lettuce && carrot && tomato && onion && apple && chicken && corn && egg && lemon && milk && strawberry && watermelon)
         {
@@ -281,8 +134,27 @@ public class InputText : MonoBehaviour
             buttonToActivate.SetActive(false);
             buttonCheck.SetActive(true);
         }
+    }
 
+    private void CheckInput(TMP_InputField inputField, TMP_Text outputText, ref bool flag, string correctText)
+    {
+        if (inputField.text.ToLower() == correctText.ToLower())
+        {
+            outputText.text = "Correct!";
+            outputText.color = Color.green;
+            flag = true;
+        }
+        else
+        {
+            outputText.text = "Incorrect!";
+            outputText.color = Color.red;
+            flag = false;
+        }
 
+        foreach (var panel in panelsToActivate)
+        {
+            panel.SetActive(true); // Asegúrate de que los paneles estén desactivados al inicio
+        }
     }
 
     public void nextLevel()
